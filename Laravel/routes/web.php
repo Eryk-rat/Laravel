@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,8 @@ Route::resource('testLibraries', App\Http\Controllers\test_libraryController::cl
 
 
 Route::resource('testLibrary2s', App\Http\Controllers\test_library_2Controller::class);
+
+Route::get('/sms',[SmsController::class, 'index']);
+Route::post('/sms/veryfikation',[SmsController::class, 'veryfikation']);
+Route::get('/sms/test',[SmsController::class, 'sms_send']);
+
